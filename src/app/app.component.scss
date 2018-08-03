@@ -1,0 +1,13 @@
+.myClassTest {
+
+    &.admin {
+        background-color: green;
+    }
+
+    &.non-admin {
+        background-color: red;
+    }
+
+    
+    color : blue
+}

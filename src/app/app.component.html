@@ -1,0 +1,57 @@
+<!-- <app-mycomponent></app-mycomponent>
+<app-firstcomponent></app-firstcomponent> -->
+
+<!-- One - way data binding  -->
+
+
+<!-- {{whichClass}} Interpolation -->
+
+<!-- {{MyArr}}
+
+{{siriUserValue.fname}} -->
+
+<!-- <div>
+  <input type="text"  [value] = "password" (input) = "inputEventHandler($event)" #myPasswordTemRef/>
+</div>
+<div>
+  <input type="text"  [(ngModel)] = "userNameValue" />
+</div>
+
+<div>
+  passwordFromButton = {{passwordBtn}}
+</div>
+<div>
+  password = {{password}}
+</div>
+<div>
+  userName = {{userNameValue}}
+</div>
+<div>
+  <button (click) = "inputEventHandlerButton(myPasswordTemRef)">Click Me</button>
+</div> -->
+
+
+<div>
+  <table border="1">
+    <tr>
+      <th>First Name</th>
+      <th>Email ID</th>
+      <th>is Admin?</th>
+      <th>DOB</th>
+    </tr>
+    <tr  *ngFor = "let siriUser of siriUserValueArr" class="myClassTest">
+      <td>{{siriUser.fname}}</td>
+      <td>{{siriUser.emailID}}</td>
+      <td *ngIf = "siriUser.isAdmin">yes</td>
+      <td *ngIf = "!siriUser.isAdmin">NO</td>
+      <td>{{siriUser.dob | date: 'mm/dd/yyyy' }} </td>
+    </tr>
+
+    <!-- <td *ngIf = "siriUser.isAdmin" *ngClass = "{'admin' :  siriUser.isAdmin , 'non-admin' : !siriUser.isAdmin}">yes</td>
+    <td *ngIf = "!siriUser.isAdmin" *ngClass = "{'admin' :  siriUser.isAdmin , 'non-admin' : !siriUser.isAdmin}">NO</td> -->
+  </table>
+
+  <menu-container></menu-container>
+
+</div>
+
