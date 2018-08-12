@@ -1,17 +1,29 @@
-import {Component, Input}  from '@angular/core'
+import {Component, Input, OnInit, OnChanges}  from '@angular/core'
 import { MenuService } from '../service/app.menu.service';
 import { MenuItem } from '../models/app.menuitem.model';
 
 //Dumb Component
 @Component ({
 
-    selector:'menu-item',
+    selector:'menu-item-edit',
     template:`<input type="text" [(ngModel)] = "menuItemValue.price">`,
     styleUrls:[]
 
 })
 
-export class MenuItemComponent {
+export class MenuItemEditComponent implements OnInit, OnChanges{
 
    @Input() menuItemValue: MenuItem
+
+   ngOnInit() {
+
+    }
+
+    ngOnChanges() {
+        console.log("Changed");
+    }
+
+    ngDoCheck() {
+        console.log("ngDocheck()")
+    }
 }

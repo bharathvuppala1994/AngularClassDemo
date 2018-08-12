@@ -1,26 +1,50 @@
-<table border = "1" class="table">
+
+<button class="btn btn-primary" (click) = "showMenuAddDiv()">Add New Dish</button><br/><br/><br/>
+
+<div *ngIf="addNewDishDiv">
+    <menu-add (onAddOfNewDish) = "handleNewDishAdd($event)"></menu-add><br/><br/><br/>
+</div>
+
+<ul class="list-group" *ngFor = "let menuItem of menuItems; let i = index">
+   
+    <menu-item [dish]="menuItem" (displayMeEvent) = "smartCoponentEvent($event)">
+
+            {{i}}.<h1>{{menuItem.name}}</h1> <br/>
+
+    </menu-item>
+    
+</ul>
+    
+
+
+
+
+
+<!-- <table border = "1" class="table">
     <thead class="thead-dark">
         <tr>
             <th>Name</th>
             <th>Price</th>
             <th>Spicy Level</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let item of menuItems">
-            <td>{{item.itemName}}</td>
+            <td>{{item.name}}</td>
             <td>{{item.price}}</td>
             <td>{{item.spicyLevel}}</td>
+            <td><button class="btn btn-danger" (click) = "deleteDish(item)">&nbsp;X&nbsp;</button></td>
         </tr>
     </tbody>
 
     
-</table>
+</table> -->
 
-<button class="btn btn-outline-success" (click) = "alert('Bootstrap')">Test Button</button>
+<button class="btn btn-outline-success">Test Button</button>
 
 <br/><br/><br/><br/><br/>
 
-<div *ngFor = "let item of menuItems">
+<!-- <div *ngFor = "let item of menuItems">
 <menu-item [menuItemValue] = "item"></menu-item>
-</div>
+</div> -->

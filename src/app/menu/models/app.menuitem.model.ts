@@ -1,13 +1,14 @@
-export interface MenuItem {
-
-    itemID: number,
-    itemName: string,
-    price: number,
-    spicyLevel: SpicyLevel
+export interface MenuItem {    
+    id: number,
+    name: string;
+    description: string;
+	price : number
+	imageLocation: string
+    spicyLevel : SpicyLevel
 }
 
 export enum SpicyLevel {
-    Low = 1,
-    Medium,
-    High
+    Low = 'LOW',
+    Medium = 'MEDIUM',
+    High = 'HIGH'
 }

@@ -8,6 +8,8 @@ import { FirstComponent } from './firstcomponent';
 import {FormsModule}  from '@angular/forms'
 import { MenuModule } from './menu/app.menu.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({//Decorator
   declarations: [
     AppComponent,myFirstComponent,FirstComponent
@@ -15,7 +17,8 @@ import { MenuModule } from './menu/app.menu.module';
   imports: [
     BrowserModule,
     FormsModule,
-    MenuModule
+    MenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

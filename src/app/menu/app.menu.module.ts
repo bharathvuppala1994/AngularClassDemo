@@ -3,13 +3,17 @@ import {FormsModule} from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser';
 import { MenuContainerComponent } from './container/app.menu.container.component';
 import { MenuService } from './service/app.menu.service';
-import { MenuItemComponent } from './components/app.menu.item.edit.component';
+import { MenuItemEditComponent } from './components/app.menu.item.edit.component';
+import { MenuAddComponent } from './components/app.menu.add.component'; 
+
+import { HttpClientModule } from '@angular/common/http';
+import { MenuItemComponent } from './components/app.menu.item.component'; 
 
 @NgModule ( {
 
-    imports: [FormsModule, BrowserModule],
+    imports: [FormsModule, BrowserModule,HttpClientModule],
     exports:[MenuContainerComponent],
-    declarations:[MenuContainerComponent, MenuItemComponent],
+    declarations:[MenuContainerComponent, MenuItemEditComponent, MenuAddComponent, MenuItemComponent],
     providers:[MenuService]
 
 })

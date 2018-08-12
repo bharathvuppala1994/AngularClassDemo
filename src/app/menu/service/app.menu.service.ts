@@ -1,6 +1,41 @@
 import { MenuItem, SpicyLevel } from "../models/app.menuitem.model";
+import {HttpClient} from '@angular/common/http'
+import { Injectable } from "../../../../node_modules/@angular/core";
 
+
+const MENU_SERVICE = 'http://localhost:8080/menuservice/'
+
+@Injectable()
 export class MenuService {
+
+    constructor(private httpClient: HttpClient) {
+        console.log(httpClient);
+    }
+
+    getAllMenuItems() {
+       return this.httpClient.get(MENU_SERVICE + '/getAllMenus');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
     sampleData : MenuItem[] = [{
         itemID: 1,
@@ -24,6 +59,6 @@ export class MenuService {
     getMenuItems() : MenuItem[] {
         return this.sampleData;
     }
-
+*/
     
 }
