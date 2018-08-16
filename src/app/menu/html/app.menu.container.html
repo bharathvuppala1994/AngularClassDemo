@@ -7,9 +7,9 @@
 
 <ul class="list-group" *ngFor = "let menuItem of menuItems; let i = index">
    
-    <menu-item [dish]="menuItem" (displayMeEvent) = "smartCoponentEvent($event)">
+    <menu-item [dish]="menuItem" (displayMeEvent) = "smartCoponentEvent($event)" (deleteMenuItem) = "deleteMenuItemSC()">
 
-            {{i}}.<h1>{{menuItem.name}}</h1> <br/>
+            {{i}}.<h1>{{menuItem.itemName}}</h1> <br/>
 
     </menu-item>
     
@@ -41,7 +41,7 @@
     
 </table> -->
 
-<button class="btn btn-outline-success">Test Button</button>
+<!-- <button class="btn btn-outline-success">Test Button</button> -->
 
 <br/><br/><br/><br/><br/>
 

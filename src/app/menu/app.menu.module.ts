@@ -8,12 +8,15 @@ import { MenuAddComponent } from './components/app.menu.add.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MenuItemComponent } from './components/app.menu.item.component'; 
+import { PriceValidator } from './components/app.menu.price.validator';
+
+
 
 @NgModule ( {
 
     imports: [FormsModule, BrowserModule,HttpClientModule],
     exports:[MenuContainerComponent],
-    declarations:[MenuContainerComponent, MenuItemEditComponent, MenuAddComponent, MenuItemComponent],
+    declarations:[MenuContainerComponent, MenuItemEditComponent, MenuAddComponent, MenuItemComponent,PriceValidator],
     providers:[MenuService]
 
 })

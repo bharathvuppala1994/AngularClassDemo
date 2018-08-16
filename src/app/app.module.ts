@@ -9,16 +9,19 @@ import {FormsModule}  from '@angular/forms'
 import { MenuModule } from './menu/app.menu.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersComponent } from './orders/orders.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({//Decorator
   declarations: [
-    AppComponent,myFirstComponent,FirstComponent
+    AppComponent,myFirstComponent,FirstComponent, OrdersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MenuModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

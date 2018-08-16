@@ -50,9 +50,21 @@
      <td *ngIf = "siriUser.isAdmin" *ngClass = "{'admin' :  siriUser.isAdmin , 'non-admin' : !siriUser.isAdmin}">yes</td>
     <td *ngIf = "!siriUser.isAdmin" *ngClass = "{'admin' :  siriUser.isAdmin , 'non-admin' : !siriUser.isAdmin}">NO</td> 
   <!-- </table>  -->
-
+  <h3>User Component</h3>
   <div>
-  <menu-container></menu-container>
+  <div class="card" style="background-color:darkturquoise">
+  <div class="card-body">
+    <app-registration></app-registration>
+  </div>
+  </div>
+<hr><br><br>
+<h3>Menu Component</h3>
+  <div class="card" style="background-color: azure">
+  <div class="card-body">
+    <menu-container></menu-container>
+  </div>
+  </div>
+
 
 </div>
 

@@ -1,0 +1,38 @@
+<div class="card">
+<div class="card-body">
+    
+        <p *ngIf="formNotValid" class="notValid">Please fix the error messages</p>
+    <form (ngSubmit) = "onSumbitForm(addMenuForm)" #addMenuForm = "ngForm">
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" 
+        [(ngModel)] = "newMenuItem.itemName" name="itemName" required
+         placeholder="Dish Name" aria-label="Dish Name" aria-describedby="basic-addon2" #name="ngModel">
+    </div>
+    <span class="notValid" *ngIf="!name.valid && name.touched">Name is Required</span>
+    <span class="notValid" *ngIf="!name.valid && formNotValid && name.errors['required']">Name is Required after button clicked</span>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">$</span>
+        </div>
+        <input type="number" class="form-control"
+        [(ngModel)] = "newMenuItem.itemPrice" name="itemPrice"
+                placeholder="Dish Price" aria-label="Dish Price" aria-describedby="basic-addon1" required mypricevalidator #price="ngModel">
+        
+    </div>
+    <span class="notValid" *ngIf="!price.valid && price.touched">Price should be greater than $5</span>
+    <div class="form-group">
+    <label class="col-sm-2 col-form-label">Spicy Level</label>     
+    <select  class="form-control" #spiceLevel="ngModel"  name="itemSpice"
+    [(ngModel)] = "newMenuItem.spicyLevel">
+        <option value="HIGH">HIGH</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="LOW">LOW</option>
+    </select>
+    </div>
+    <button type="submit"  class="btn btn-success" style="float:right"> ADD </button>
+    </form>
+<!--[disabled]="!addMenuForm.valid"-->
+    Check Validity = {{addMenuForm.valid}}
+    Name is : {{name}}
+</div>
+</div>

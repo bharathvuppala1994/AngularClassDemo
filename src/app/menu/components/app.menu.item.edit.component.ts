@@ -14,15 +14,11 @@ import { MenuItem } from '../models/app.menuitem.model';
 export class MenuItemEditComponent implements OnInit, OnChanges{
 
    @Input() menuItemValue: MenuItem
-
    ngOnInit() {
-
     }
-
     ngOnChanges() {
         console.log("Changed");
     }
-
     ngDoCheck() {
         console.log("ngDocheck()")
     }

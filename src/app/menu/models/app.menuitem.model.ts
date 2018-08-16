@@ -1,10 +1,8 @@
 export interface MenuItem {    
-    id: number,
-    name: string;
-    description: string;
-	price : number
-	imageLocation: string
-    spicyLevel : SpicyLevel
+    itemID: number,
+    itemName: string;
+	itemPrice : number
+    spicyLevel : string
 }
 
 export enum SpicyLevel {

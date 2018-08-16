@@ -1,9 +1,16 @@
 import { MenuItem, SpicyLevel } from "../models/app.menuitem.model";
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpHeaders} from '@angular/common/http'
 import { Injectable } from "../../../../node_modules/@angular/core";
 
 
-const MENU_SERVICE = 'http://localhost:8080/menuservice/'
+const MENU_SERVICE = 'http://localhost:8999/restuarent'
+
+const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'my-auth-token'
+    })
+}
 
 @Injectable()
 export class MenuService {
@@ -13,7 +20,11 @@ export class MenuService {
     }
 
     getAllMenuItems() {
-       return this.httpClient.get(MENU_SERVICE + '/getAllMenus');
+       return this.httpClient.get(MENU_SERVICE + '/getAllMenuItems');
+    }
+
+    addNewMenuItem(newMenuItem: MenuItem) {
+        return this.httpClient.post(MENU_SERVICE + "/saveMenuItem" , newMenuItem , httpOptions );
     }
 
 

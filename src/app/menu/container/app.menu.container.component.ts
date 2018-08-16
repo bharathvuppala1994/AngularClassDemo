@@ -16,7 +16,6 @@ export class MenuContainerComponent implements OnInit, OnChanges{
     testDish : MenuItem;
     addNewDishDiv : boolean = false;
     constructor(private menuService: MenuService) {
-        
     }
 
     ngOnInit() {
@@ -37,25 +36,13 @@ export class MenuContainerComponent implements OnInit, OnChanges{
 
     handleNewDishAdd(newMenuItem: MenuItem) {
         console.log("Smart Component : " + newMenuItem);
-        //Object.assign({},this.menuItems,newMenuItem);
-        //this.menuItems = [...this.menuItems,newMenuItem]
-        this.menuItems.push(newMenuItem)
+        this.menuService.addNewMenuItem(newMenuItem).subscribe((menuItemWhichIsAdded: MenuItem) => {
+            this.menuItems.push(menuItemWhichIsAdded);
+        })        
     }
 
-    newArr : number[] = [5]
-
     deleteDish(dishItem : MenuItem) {
-        //this.menuItems = this.menuItems.filter(dish => dishItem.itemID != dish.itemID);
-
-        /*let arrayNum = [1,2,3,4]
-
-        arrayNum.forEach(num => {
-            if(num != 1) {
-               this.newArr.push(num)
-            }
-        })
-
-        console.log(this.newArr);*/
+        this.menuItems = this.menuItems.filter(dish => dishItem.itemID != dish.itemID);  
     }
 
     smartCoponentEvent(dish : MenuItem) {
