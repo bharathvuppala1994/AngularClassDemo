@@ -31,6 +31,7 @@ export class RegistrationComponent implements OnInit {
     const promise = new Promise<any> ((resolve, reject) => {
       let emailValue: string = control.value;
       let returnValue = null;
+      console.log("Email ID : " , emailValue)
       console.log(emailValue.indexOf('test@test.com'))
       setTimeout(() => {
         if(emailValue.indexOf('test@test.com') === -1) {
