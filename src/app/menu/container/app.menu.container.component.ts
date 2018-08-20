@@ -1,6 +1,7 @@
 import {Component, OnInit, OnChanges}  from '@angular/core'
 import { MenuService } from '../service/app.menu.service';
 import { MenuItem } from '../models/app.menuitem.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component ({
 
@@ -15,7 +16,8 @@ export class MenuContainerComponent implements OnInit, OnChanges{
     menuItems : MenuItem[]
     testDish : MenuItem;
     addNewDishDiv : boolean = false;
-    constructor(private menuService: MenuService) {
+    constructor(private menuService: MenuService ,
+            private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -24,6 +26,12 @@ export class MenuContainerComponent implements OnInit, OnChanges{
              this.menuItems = responseMenuItems;
          }
         );
+
+        let dynamicID = this.activatedRoute.snapshot.params['itemID'];
+        console.log(dynamicID)
+
+        let itemName = this.activatedRoute.snapshot.queryParams['itemNameQ'];
+        console.log(itemName)
     }
 
     ngOnChanges() {

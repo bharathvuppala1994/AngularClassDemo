@@ -5,7 +5,7 @@ import { MenuItem } from '../models/app.menuitem.model';
 
     selector:'menu-item',
     template:`
-    <li class="list-group-item list-group-item-primary">
+    <li class="list-group-item list-group-item-primary" (onclick) = "navigateToMenu()">
     
         <div class="row">
             <div class="col-sm-6">
@@ -39,6 +39,10 @@ export class MenuItemComponent{
 
     deleteItem()  {
         //this.deleteMenuItem.emit(this.dish.id)
+    }
+
+    navigateToMenu() {
+        let id = this.dish.itemID
     }
    
 }

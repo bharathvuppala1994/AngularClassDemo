@@ -11,3 +11,23 @@
     
     color : blue
 }
+
+
+
+
+/* unvisited link */
+nav-link:link {
+    color: red;
+}
+
+
+
+/* mouse over link */
+nav-link:hover {
+    color: hotpink;
+}
+
+/* selected link */
+nav-link:active {
+    color: blue;
+}
